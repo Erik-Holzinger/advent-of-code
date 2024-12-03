@@ -1,31 +1,37 @@
+<p align="center">
+    <picture>
+         <img src="img/logo.jpg" alt="logo" width="256">
+    </picture>
+</p>
+
 # advent-of-code
 🎄💻 A glorious mess of duct tape, wild loops, and questionable logic that somehow solves the Advent of Code puzzles!
 Expect brute force solutions, late-night commits, and the occasional "TODO: Optimize this (never)". 
 Enter at your own risk and marvel at the creativity (or lack thereof)! 🌟
 
 ## 2024
-- [ ] Exercise 1
-- [ ] Exercise 2
-- [ ] Exercise 3
-- [ ] Exercise 4
-- [ ] Exercise 5
-- [ ] Exercise 6
-- [ ] Exercise 7
-- [ ] Exercise 8
-- [ ] Exercise 9
-- [ ] Exercise 10
-- [ ] Exercise 11
-- [ ] Exercise 12
-- [ ] Exercise 13
-- [ ] Exercise 14
-- [ ] Exercise 15
-- [ ] Exercise 16
-- [ ] Exercise 17
-- [ ] Exercise 18
-- [ ] Exercise 19
-- [ ] Exercise 20
-- [ ] Exercise 21
-- [ ] Exercise 22
-- [ ] Exercise 23
-- [ ] Exercise 24
-- [ ] Exercise 25
+- [x] Day 1
+- [x] Day 2
+- [ ] Day 3
+- [ ] Day 4
+- [ ] Day 5
+- [ ] Day 6
+- [ ] Day 7
+- [ ] Day 8
+- [ ] Day 9
+- [ ] Day 10
+- [ ] Day 11
+- [ ] Day 12
+- [ ] Day 13
+- [ ] Day 14
+- [ ] Day 15
+- [ ] Day 16
+- [ ] Day 17
+- [ ] Day 18
+- [ ] Day 19
+- [ ] Day 20
+- [ ] Day 21
+- [ ] Day 22
+- [ ] Day 23
+- [ ] Day 24
+- [ ] Day 25

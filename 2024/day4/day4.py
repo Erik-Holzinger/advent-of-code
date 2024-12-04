@@ -16,11 +16,6 @@ all_directions = [
     (0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)
 ]
 
-# Possible diagonal traverse directions; includes reversed check
-diagonal_directions = [
-    (1, 1), (-1, -1), (1, -1), (-1, 1)
-]
-
 
 def search_predicate(x, y, dir_x, dir_y, rows, cols, search_text, predicate) -> bool:
     """Iterate from a given starting point in each direction and check if the predicate was found."""

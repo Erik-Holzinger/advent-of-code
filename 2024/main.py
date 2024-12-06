@@ -5,6 +5,7 @@ from day2 import solve_2a, solve_2b
 from day3 import solve_3a, solve_3b
 from day4 import solve_4a, solve_4b
 from day5 import solve_5a, solve_5b
+from day6 import solve_6a, solve_6b
 
 if __name__ == '__main__':
     solve_1a(Path("./day1/input.txt"))
@@ -23,3 +24,6 @@ if __name__ == '__main__':
 
     solve_5a(Path("./day5/input.txt"))
     solve_5b(Path("./day5/input.txt"))
+
+    solve_6a(Path("./day6/input.txt"))
+    solve_6b(Path("./day6/input.txt"))

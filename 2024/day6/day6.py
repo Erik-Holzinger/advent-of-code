@@ -91,9 +91,9 @@ def solve_6a(input_file: Path):
     while not has_escaped(i, j, direction, puzzle_map):
         i, j, direction, visited, puzzle_map = iterate_directions(i, j, direction, visited, puzzle_map)
 
-    print("Result 6a: " + str(len(visited.keys())))
+    return len(visited.keys())
 
 
 def solve_6b(input_file: Path):
     result = 0
-    print("Result 6b: " + str(result))
+    return result

@@ -17,7 +17,7 @@ def solve_3a(input_file: Path):
         if matching:
             x, y = int(matching.group(1)), int(matching.group(2))
             result += x * y
-    print("Result 3a: " + str(result))
+    return result
 
 
 def solve_3b(input_file: Path):
@@ -44,4 +44,4 @@ def solve_3b(input_file: Path):
         if mul_matcher:
             result += int(mul_matcher.group(1)) * int(mul_matcher.group(2))
 
-    print("Result 3b: " + str(result))
+    return result

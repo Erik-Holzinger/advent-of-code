@@ -21,7 +21,7 @@ def solve_1a(input_file: Path):
     result = 0
     for (x, y) in zip(sorted(left), sorted(right)):
         result += abs(x - y)
-    print("Result 1a: " + str(result))
+    return result
 
 
 def solve_1b(input_file: Path):
@@ -31,4 +31,4 @@ def solve_1b(input_file: Path):
     for x in left:
         y = right.count(x)
         result += x * y
-    print("Result 1b: " + str(result))
+    return result

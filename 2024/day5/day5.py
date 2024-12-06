@@ -84,7 +84,7 @@ def solve_5a(input_file: Path):
     result = 0
     for entry in valid_entries:
         result += entry[int((len(entry) - 1) / 2)]
-    print("Result 5a: " + str(result))
+    return result
 
 
 def solve_5b(input_file: Path):
@@ -95,4 +95,4 @@ def solve_5b(input_file: Path):
     result = 0
     for entry in invalid_entries:
         result += entry[int((len(entry) - 1) / 2)]
-    print("Result 5b: " + str(result))
+    return result

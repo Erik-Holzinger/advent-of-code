@@ -44,7 +44,7 @@ def solve_4a(input_file: Path):
                     if search_predicate(i, j, dx, dy, rows, cols, puzzle_input, word):
                         count += 1
 
-    print("Result 4a: " + str(count))
+    return count
 
 
 def solve_4b(input_file: Path):
@@ -66,4 +66,4 @@ def solve_4b(input_file: Path):
                 if (tl_br or br_tl) and (tr_bl or bl_tr):
                     count += 1
 
-    print("Result 4b: " + str(count))
+    return count

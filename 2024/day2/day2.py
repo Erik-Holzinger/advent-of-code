@@ -40,7 +40,7 @@ def solve_2a(input_file: Path):
             unsafe += 1
 
     safe = len(puzzle_input) - unsafe
-    print("Result 2a: " + str(safe))
+    return safe
 
 
 def solve_2b(input_file: Path):
@@ -63,4 +63,4 @@ def solve_2b(input_file: Path):
                     unsafe += 1
 
     safe = len(puzzle_input) - unsafe
-    print("Result 2b: " + str(safe))
+    return safe

@@ -6,7 +6,7 @@ from day1 import solve_1a, solve_1b
 
 class TestDay1(unittest.TestCase):
     def test_solve_1a(self):
-        self.assertEqual(solve_1a(Path("input_test.txt")), 11)
+        self.assertEqual(11, solve_1a(Path("input_test.txt")))
 
     def test_solve_1b(self):
-        self.assertEqual(solve_1b(Path("input_test.txt")), 31)
+        self.assertEqual(31, solve_1b(Path("input_test.txt")))

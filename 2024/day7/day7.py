@@ -52,7 +52,7 @@ def __backtrack_equation_with_concat(numbers: List[int], expected_result: int, i
         return True
 
     # Concatenation case
-    if __backtrack_equation_with_concat(numbers, expected_result, index + 1, int(str(current_value) + str(next_num))):
+    if __backtrack_equation_with_concat(numbers, expected_result, index + 1, int(f"{current_value}{next_num}")):
         return True
 
     return False

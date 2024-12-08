@@ -2,8 +2,10 @@ import re
 from pathlib import Path
 from typing import List
 
+from y2024.utils import timer
 
-def get_input(input_file: Path) -> List[List[int]]:
+
+def __get_input(input_file: Path) -> List[List[int]]:
     puzzle_input = []
 
     with open(input_file) as f:
@@ -14,7 +16,7 @@ def get_input(input_file: Path) -> List[List[int]]:
     return puzzle_input
 
 
-def detect_invalid(entry: List[int]) -> int:
+def __detect_invalid(entry: List[int]) -> int:
     asc: bool | None = None
     i = 0
     for x, y in zip(entry, entry[1:]):
@@ -30,26 +32,28 @@ def detect_invalid(entry: List[int]) -> int:
     return -1
 
 
+@timer
 def solve_2a(input_file: Path):
-    puzzle_input = get_input(input_file)
+    puzzle_input = __get_input(input_file)
 
     unsafe = 0
     for entry in puzzle_input:
         entry = list(map(int, entry))
-        if (detect_invalid(entry)) != -1:
+        if (__detect_invalid(entry)) != -1:
             unsafe += 1
 
     safe = len(puzzle_input) - unsafe
     return safe
 
 
+@timer
 def solve_2b(input_file: Path):
-    puzzle_input = get_input(input_file)
+    puzzle_input = __get_input(input_file)
 
     unsafe = 0
     for entry in puzzle_input:
         entry = list(map(int, entry))
-        index_to_remove = detect_invalid(entry)
+        index_to_remove = __detect_invalid(entry)
 
         if index_to_remove != -1:
             # Usage of "brute-force" due to the fact,
@@ -57,7 +61,7 @@ def solve_2b(input_file: Path):
             # the index_to_remove is already offset by 1 to fix the issue.
             for i in range(len(entry)):
                 corrected_entry = entry[:i] + entry[i + 1:]
-                if (detect_invalid(corrected_entry)) == -1:
+                if (__detect_invalid(corrected_entry)) == -1:
                     break
                 elif i == len(entry) - 1:
                     unsafe += 1

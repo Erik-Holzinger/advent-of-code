@@ -17,7 +17,7 @@ Enter at your own risk and marvel at the creativity (or lack thereof)! 🌟
 - [x] Day 5
 - [x] Day 6
 - [x] Day 7
-- [ ] Day 8
+- [x] Day 8
 - [ ] Day 9
 - [ ] Day 10
 - [ ] Day 11
@@ -35,3 +35,6 @@ Enter at your own risk and marvel at the creativity (or lack thereof)! 🌟
 - [ ] Day 23
 - [ ] Day 24
 - [ ] Day 25
+
+## Format
+Run `python -m autopep8 --in-place --recursive --aggressive .` to format the python code according to pep8 style.

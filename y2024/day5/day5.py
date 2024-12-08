@@ -3,8 +3,11 @@ from collections import deque
 from pathlib import Path
 from typing import List, Dict, Tuple
 
+from y2024.utils import timer
 
-def load_puzzle_input(input_file: Path) -> Tuple[Dict[int, List[int]], List[List[int]]]:
+
+def __load_puzzle_input(
+        input_file: Path) -> Tuple[Dict[int, List[int]], List[List[int]]]:
     dag: Dict[int, List[int]] = {}
     puzzle_input: List[List[int]] = []
 
@@ -21,7 +24,7 @@ def load_puzzle_input(input_file: Path) -> Tuple[Dict[int, List[int]], List[List
     return dag, puzzle_input
 
 
-def is_entry_valid(entry: List[int], dag: Dict[int, List[int]]) -> bool:
+def __is_entry_valid(entry: List[int], dag: Dict[int, List[int]]) -> bool:
     for i in range(len(entry)):
         for j in range(len(entry)):
             if i >= j:
@@ -33,7 +36,8 @@ def is_entry_valid(entry: List[int], dag: Dict[int, List[int]]) -> bool:
     return True
 
 
-def sort_entry_using_kahn(numbers_to_sort: List[int], dag: Dict[int, List[int]]) -> List[int]:
+def __sort_entry_using_kahn(
+        numbers_to_sort: List[int], dag: Dict[int, List[int]]) -> List[int]:
     # https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/
 
     # graph should only contain nodes and edges that are in our entry to sort
@@ -41,7 +45,8 @@ def sort_entry_using_kahn(numbers_to_sort: List[int], dag: Dict[int, List[int]])
     for node in dag:
         if node not in numbers_to_sort:
             continue
-        dag_with_relevant_nodes[node] = [val for val in dag[node] if val in numbers_to_sort]
+        dag_with_relevant_nodes[node] = [
+            val for val in dag[node] if val in numbers_to_sort]
 
     # in_degree = number of incoming edges to a node
     in_degree: Dict[int, int] = {}
@@ -72,14 +77,16 @@ def sort_entry_using_kahn(numbers_to_sort: List[int], dag: Dict[int, List[int]])
 
     # cycle detection
     if len(result) != len(in_degree):
-        raise ValueError("Given DAG has a cycle therefore no sorting is possible")
+        raise ValueError(
+            "Given DAG has a cycle therefore no sorting is possible")
     return result
 
 
+@timer
 def solve_5a(input_file: Path):
-    dag, puzzle_input = load_puzzle_input(input_file)
+    dag, puzzle_input = __load_puzzle_input(input_file)
 
-    valid_entries = [x for x in puzzle_input if is_entry_valid(x, dag)]
+    valid_entries = [x for x in puzzle_input if __is_entry_valid(x, dag)]
 
     result = 0
     for entry in valid_entries:
@@ -87,10 +94,14 @@ def solve_5a(input_file: Path):
     return result
 
 
+@timer
 def solve_5b(input_file: Path):
-    dag, puzzle_input = load_puzzle_input(input_file)
+    dag, puzzle_input = __load_puzzle_input(input_file)
 
-    invalid_entries = [sort_entry_using_kahn(x, dag) for x in puzzle_input if not is_entry_valid(x, dag)]
+    invalid_entries = [
+        __sort_entry_using_kahn(
+            x, dag) for x in puzzle_input if not __is_entry_valid(
+            x, dag)]
 
     result = 0
     for entry in invalid_entries:

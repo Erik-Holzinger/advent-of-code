@@ -2,8 +2,10 @@ import re
 from pathlib import Path
 from typing import Tuple, List
 
+from y2024.utils import timer
 
-def get_input(input_file: Path) -> Tuple[List[int], List[int]]:
+
+def __get_input(input_file: Path) -> Tuple[List[int], List[int]]:
     left, right = [], []
 
     with open(input_file) as f:
@@ -15,8 +17,9 @@ def get_input(input_file: Path) -> Tuple[List[int], List[int]]:
     return left, right
 
 
+@timer
 def solve_1a(input_file: Path):
-    left, right = get_input(input_file)
+    left, right = __get_input(input_file)
 
     result = 0
     for (x, y) in zip(sorted(left), sorted(right)):
@@ -24,8 +27,9 @@ def solve_1a(input_file: Path):
     return result
 
 
+@timer
 def solve_1b(input_file: Path):
-    left, right = get_input(input_file)
+    left, right = __get_input(input_file)
 
     result = 0
     for x in left:

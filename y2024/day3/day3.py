@@ -2,14 +2,17 @@ import re
 from pathlib import Path
 from typing import List
 
+from y2024.utils import timer
 
-def get_input(input_file: Path) -> List[str]:
+
+def __get_input(input_file: Path) -> List[str]:
     with open(input_file) as f:
         return re.findall(r"mul\(\d+,\d+\)|don't\(\)|do\(\)", f.read())
 
 
+@timer
 def solve_3a(input_file: Path):
-    puzzle_input = get_input(input_file)
+    puzzle_input = __get_input(input_file)
 
     result = 0
     for entry in puzzle_input:
@@ -20,8 +23,9 @@ def solve_3a(input_file: Path):
     return result
 
 
+@timer
 def solve_3b(input_file: Path):
-    puzzle_input = get_input(input_file)
+    puzzle_input = __get_input(input_file)
 
     calc_disabled = False
     result = 0

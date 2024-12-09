@@ -71,7 +71,7 @@ def sort_quicker_blocks(puzzle_input: List[str]) -> List[str]:
             space_left += 1
             left_search += 1
 
-        if left_search >= right_search:
+        if left_search > right:
             left = 0
             right = right_search
             continue
@@ -108,6 +108,7 @@ def solve_9a(input_file: Path) -> int:
 def solve_9b(input_file: Path) -> int:
     puzzle_input: List[str] = __load_puzzle_input(input_file)
     puzzle_input = sort_quicker_blocks(puzzle_input)
+    print(puzzle_input)
 
     checksum = 0
     for i in range(len(puzzle_input)):

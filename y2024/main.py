@@ -8,6 +8,7 @@ from day5 import solve_5a, solve_5b
 from day6 import solve_6a, solve_6b
 from day7 import solve_7a, solve_7b
 from day8 import solve_8a, solve_8b
+from day9 import solve_9a, solve_9b
 
 if __name__ == '__main__':
     solve_1a(Path("./day1/input.txt"))
@@ -29,7 +30,7 @@ if __name__ == '__main__':
     solve_5b(Path("./day5/input.txt"))
 
     solve_6a(Path("./day6/input.txt"))
-    solve_6b(Path("./day6/input.txt"))
+    # solve_6b(Path("./day6/input.txt"))
 
     # https://de.wikipedia.org/wiki/Backtracking
     solve_7a(Path("./day7/input.txt"))
@@ -37,3 +38,6 @@ if __name__ == '__main__':
 
     solve_8a(Path("./day8/input.txt"))
     solve_8b(Path("./day8/input.txt"))
+
+    solve_9a(Path("./day9/input.txt"))
+    solve_9b(Path("./day9/input.txt"))

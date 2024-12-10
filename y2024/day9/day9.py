@@ -93,7 +93,7 @@ def __calculate_checksum(puzzle_input: List[str]) -> int:
     checksum = 0
     for i in range(len(puzzle_input)):
         if puzzle_input[i] == ".":
-            break
+            continue
         checksum += i * int(puzzle_input[i])
     return checksum
 

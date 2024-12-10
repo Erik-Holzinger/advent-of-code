@@ -1,11 +1,12 @@
 from pathlib import Path
 
 from day1 import solve_1a, solve_1b
+from day10 import solve_10a, solve_10b
 from day2 import solve_2a, solve_2b
 from day3 import solve_3a, solve_3b
 from day4 import solve_4a, solve_4b
 from day5 import solve_5a, solve_5b
-from day6 import solve_6a, solve_6b
+from day6 import solve_6a
 from day7 import solve_7a, solve_7b
 from day8 import solve_8a, solve_8b
 from day9 import solve_9a, solve_9b
@@ -41,3 +42,6 @@ if __name__ == '__main__':
 
     solve_9a(Path("./day9/input.txt"))
     solve_9b(Path("./day9/input.txt"))
+
+    solve_10a(Path("./day10/input.txt"))
+    solve_10b(Path("./day10/input.txt"))
